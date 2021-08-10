@@ -1,0 +1,35 @@
+
+
+paths:
+  /login:
+    post:
+      summary: Login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/login'
+      responses:
+        200:
+          description: Test
+
+components:
+  schemas:
+    login:
+      type: object
+      properties:
+        email:
+          type: string
+          example: example@example.com.br
+        password:
+          type: string
+          format: password
+          example: example123
+        expires:
+          type: integer
+          example: 86400
+      required:
+       - email
+       - password
+node.js
